@@ -1,0 +1,14 @@
+.styles {
+    &_header {
+        opacity: 85%;
+    }
+}
+
+.mainContainer {
+    background-color: #e4e4e4;
+
+    &_slider {
+        background-color: #3d3c3c;
+        border-radius: 0 0 80px 80px;
+    }
+}

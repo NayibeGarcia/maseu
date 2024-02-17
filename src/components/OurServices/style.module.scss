@@ -1,0 +1,83 @@
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #cccccc;
+  margin-top: 30px;
+
+  &_title {
+    font-size: 28px;
+    font-weight: 800;
+    position: relative;
+    margin-bottom: 30px;
+    color: #912929;
+    margin-top: 30px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 49px;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+      height: 4px;
+      border-radius: 4px;
+      background-color: #bd2c2c;
+    }
+  }
+
+  &_container {
+    display: flex;
+    gap: 20px;
+    max-width: 90vw;
+    margin-bottom: 40px;
+
+    .services_card {
+      border-radius: 30px;
+      margin: 0 10px;
+      overflow: hidden;
+      display: flex;
+      background-color: #f8f8f8;
+      border-radius: 20px;
+      flex-direction: column;
+      max-width: 220px;
+      align-items: center;
+
+      &_info {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      &_image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+      &_title {
+        font-weight: 600;
+      }
+
+      &_description {
+        font-size: 0.7rem;
+        color: #a4a4a4;
+      }
+
+      ul {
+        align-self: flex-start;
+        li {
+          font-size: 0.7rem;
+        }
+      }
+      button {
+        background-color: #eee;
+        padding: 10px 30px;
+        border-radius: 20px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+      button :hover{
+        background-color: #912929;
+      }
+    }
+  }
+}

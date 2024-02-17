@@ -1,0 +1,57 @@
+.services_card {
+  border-radius: 30px;
+  margin: 0 10px;
+  overflow: hidden;
+  display: flex;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  flex-direction: column;
+  max-width: 220px;
+  align-items: center;
+
+  &_info {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+  }
+
+  &_image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  &_title {
+    font-weight: 600;
+  }
+
+  &_description {
+    font-size: 0.7rem;
+    color: #a4a4a4;
+    height: 80px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+
+  ul {
+    align-self: flex-start;
+
+    li {
+      font-size: 0.7rem;
+    }
+  }
+
+  button {
+    background-color: #912a2a;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #f8f8f8;
+    margin-bottom: 30px;
+  }
+}

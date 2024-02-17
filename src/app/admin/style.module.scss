@@ -1,0 +1,32 @@
+.admin {
+  &_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    &_title {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    &_items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 80px;
+      border-radius: 20px;
+      border: solid #ddd 1px;
+    }
+  }
+}

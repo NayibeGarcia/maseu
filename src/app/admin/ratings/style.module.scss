@@ -1,0 +1,37 @@
+.ratings {
+  width: 90%;
+  &_title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    .rating_card {
+      margin: 0 10px;
+      overflow: hidden;
+      padding: 20px 10px;
+      display: flex;
+      max-width: 400px;
+      background-color: #f8f8f8;
+      border-radius: 20px;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

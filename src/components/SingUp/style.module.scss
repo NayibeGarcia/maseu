@@ -1,0 +1,42 @@
+.form_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .form_sign {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    &_title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 30px 0;
+    }
+
+    &_input {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+      input {
+        border: solid 1px #d5d5d5;
+        padding: 0 5px;
+      }
+
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    button {
+      margin: 20px 30px 0;
+      border-radius: 10px;
+    }
+  }
+}
