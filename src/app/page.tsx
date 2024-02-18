@@ -6,6 +6,7 @@ import About from '@/components/About'
 import Clients from '@/components/Clients'
 import OurRatings from '@/components/OurRatings'
 import OurServicesTop from '@/components/OurServicesTop'
+import './style_reset.css'
 
 export default function Home() {
   return (

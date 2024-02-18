@@ -13,6 +13,7 @@
 
   .logo {
     height: 20px;
+
     @media screen and (min-width: 1024px) {
       height: 50px;
     }
@@ -26,4 +27,15 @@
 
 .header_logout {
   color: #912929;
+}
+
+.header_links {
+  display: flex;
+}
+.header_links svg {
+  margin-right: 15px;
+}
+
+.header_logout {
+  display: flex;
 }
