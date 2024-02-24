@@ -8,7 +8,7 @@ import { UserAuth } from '@/context/AuthContext'
 import LoadingPage from '../loading'
 import { Button } from '@nextui-org/react'
 import Ratings from '@/components/Ratings'
-import OurServicesTop from "@/components/OurServicesTop";
+import OurServices from '@/components/OurServices'
 
 export default function Page() {
   const { user } = UserAuth();
@@ -132,7 +132,7 @@ export default function Page() {
         </tbody>
       </table>
       <div>
-        <OurServicesTop/>
+      <OurServices title="Estos son los servicios mas contratados" top={true} />
       </div>
     </div>
   );

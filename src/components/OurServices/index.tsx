@@ -1,12 +1,23 @@
 import style from './style.module.scss'
 import SwiperServices from '../SwiperServices'
-import { getAllServices } from '@/services/servicios'
+import { getAllServices, getAllServicesTop } from '@/services/servicios'
 
-const OurServices = async () => {
-  const services = await getAllServices()
+interface Props {
+  title: string;
+  top: boolean;
+}
+
+
+async function OurServices({title, top}: Props) {
+  let services;
+  if (top) {
+    services = await getAllServicesTop()
+  }else{
+    services = await getAllServices()
+  }
   return (
     <div className={style.services}>
-      <h2 className={style.services_title}>Nuestros Servicios</h2>
+      <h2 className={style.services_title}>{title}</h2>
       <div className={style.services_container}>
         <SwiperServices services={services} />
       </div>
