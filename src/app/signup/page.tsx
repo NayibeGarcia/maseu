@@ -10,7 +10,7 @@ export default async function Page({
 }) {
   const userId = searchParams.id ?? ''
 
-  const quotes = await getQuoteByUser(userId)
+  //const quotes = await getQuoteByUser(userId)
   return (
     <div className={style.sign_page}>
       <SingUp />
