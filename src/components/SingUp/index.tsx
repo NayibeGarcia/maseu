@@ -46,13 +46,14 @@ const SingUp = () => {
     await saveUser(newUser)
     window.location.href = '/'
   }
+
   return (
     <div className={style.form_container}>
       <form className={style.form_sign} onSubmit={handleSubmit}>
         <p className={style.form_sign_title}>Terminemos tu registro</p>
 
-        <div className={style.form_sign_input}>
-          <label htmlFor="name">Nombre</label>
+        <label className={style.form_sign_input}>
+          Nombre
           <input
             type="text"
             id="name"
@@ -62,9 +63,10 @@ const SingUp = () => {
             placeholder="Ingresa tu nombre"
             required
           />
-        </div>
-        <div className={style.form_sign_input}>
-          <label htmlFor="email">Correo</label>
+        </label>
+
+        <label className={style.form_sign_input}>
+          Correo
           <input
             type="text"
             id="name"
@@ -75,9 +77,10 @@ const SingUp = () => {
             placeholder=""
             required
           />
-        </div>
-        <div className={style.form_sign_input}>
-          <label htmlFor="phoneNumber">Numero celular</label>
+        </label>
+
+        <label className={style.form_sign_input}>
+          Numero celular
           <input
             type="number"
             id="phoneNumber"
@@ -87,8 +90,9 @@ const SingUp = () => {
             placeholder="Ingresa tu numero"
             required
           />
-        </div>
-        <button style={{ border: 'solid #000 1px' }} type="submit">
+        </label>
+
+        <button className='primary_btn' type="submit">
           Terminar Registro
         </button>
       </form>

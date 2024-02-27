@@ -27,15 +27,22 @@
 
 .header_logout {
   color: #912929;
+  outline: none !important;
+  span {
+    display: flex;
+  }
+  svg {
+    margin-right: 15px;
+  }
 }
 
 .header_links {
   display: flex;
-}
-.header_links svg {
-  margin-right: 15px;
-}
-
-.header_logout {
-  display: flex;
+  outline: none !important;
+  span {
+    display: flex;
+  }
+  svg {
+    margin-right: 15px;
+  }
 }
