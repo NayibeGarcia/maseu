@@ -5,9 +5,11 @@ const Footer = () => {
     <footer className={style.footer}>
       <p>
         Copyright © Mantenimientos Asesorías y Servicios E.U. All rights
-        reserved. 
-        Desarrollado por Karen Garcia - UTS
+        reserved.
       </p>
+      <small>
+        Desarrollado por <a href='#'>Karen Garcia</a> - UTS
+      </small>
     </footer>
   )
 }
