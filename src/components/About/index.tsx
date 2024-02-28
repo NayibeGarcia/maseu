@@ -14,7 +14,7 @@ const About = () => {
             <h2>Mision</h2>
           </strong>
           <p>
-            ofrecer a través de nuestro portafolio de servicios, una empresa
+            Ofrecer a través de nuestro portafolio de servicios, una empresa
             sólida responsable y oportuna en las áreas de mantenimiento
             preventivo correctivo programado, montaje y suministro de sistemas
             hidraulicos y/o equipamentos electro-mecánicos en general.
@@ -29,7 +29,7 @@ const About = () => {
             <h2>Vision</h2>
           </strong>
           <p>
-            consolidarnos como líderes en el mantenimiento predictivo preventivo
+            Consolidarnos como líderes en el mantenimiento predictivo preventivo
             y correctivo presentando soluciones alternativas y de última
             tecnología, contribuyendo a la conservacion del medio ambiente y
             abarcando el mercado con calidad y transparencia que han servido de

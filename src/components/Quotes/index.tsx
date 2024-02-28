@@ -18,9 +18,9 @@ const Quotes = () => {
     const quotes = await getAllQuotes(email)
     quotes.sort((a, b) => {
       if (sort) {
-        return a.quoteDate.seconds - b.quoteDate.seconds
+        return a?.quoteDate?.seconds - b?.quoteDate?.seconds
       }
-      return b.quoteDate.seconds - a.quoteDate.seconds
+      return b?.quoteDate?.seconds - a?.quoteDate?.seconds
     })
     setQuotes(quotes)
     setLoading(false)
@@ -30,11 +30,13 @@ const Quotes = () => {
     setLoading(true)
     ;(async () => {
       const quotes = await getAllQuotes(email)
+      console.log("qqqqqqqqqqqqqq",quotes)
       quotes.sort((a, b) => {
         if (sort) {
-          return a.quoteDate.seconds - b.quoteDate.seconds
+          console.log("wwwwwwwwwww",a.quoteDate.seconds)
+          return a?.quoteDate?.seconds - b?.quoteDate?.seconds
         }
-        return b.quoteDate.seconds - a.quoteDate.seconds
+        return b?.quoteDate?.seconds - a?.quoteDate?.seconds
       })
       setQuotes(quotes)
       setLoading(false)
@@ -75,7 +77,7 @@ const Quotes = () => {
                 </svg>
               </p>
             </td>
-            <td>Actulaizar</td>
+            <td>Actualizar</td>
           </tr>
         </thead>
         <tbody>

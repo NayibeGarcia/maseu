@@ -7,32 +7,38 @@ const Clients = () => {
       <div className={style.client}>
         <div className={style.client_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FLogo_terpel.png?alt=media&token=05aa43d5-a327-438b-b820-fb2ff6bd9733"
-            alt="terpel"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-majestic.jfif?alt=media&token=88c136d6-a5d6-4b60-b561-672f2b9fabee"
+            alt="Magestic"
           />
         </div>
         <div className={style.client_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FLogo_Megamall.png?alt=media&token=16d2886c-3c9c-4771-90ce-ab7f4c2ddf75"
-            alt="Megamall"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-altosca%C3%B1averal.jfif?alt=media&token=291a64bc-25a4-40aa-96da-9512eb67142d"
+            alt="Altos cañaveral"
           />
         </div>
         <div className={style.client_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FLogo_maspormenos.png?alt=media&token=f21904de-429f-4730-9426-3405ec6181d7"
-            alt="maspormenos"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-medicinalegal.jfif?alt=media&token=734a21ea-7887-43fe-94a4-414b3ab91c45"
+            alt="Medicina legal"
           />
         </div>
         <div className={style.client_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FLogo_Jardineslacolina.png?alt=media&token=dad69351-d7b5-473c-a2f7-0f97c3722329"
-            alt="la colina"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-diamantereal.jfif?alt=media&token=3550cdb6-ae2d-4a16-a9fe-46bb92c10bf2"
+            alt="Diamante real"
           />
         </div>
         <div className={style.client_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FLogo_Mardel.png?alt=media&token=1e049b76-0a99-4f93-ad78-6c840c5a91c8"
-            alt="calidad"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-clinicabucaramanga.jfif?alt=media&token=768d7725-8f4f-45f0-af58-fab0cf198169"
+            alt="Clinica Bucaramanga"
+          />
+        </div>
+        <div className={style.client_card}>
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/clientes%2FLogo-copetran.jfif?alt=media&token=9eab8741-f012-4470-8e69-c68286c1bbc6"
+            alt="Copetran"
           />
         </div>
       </div>
