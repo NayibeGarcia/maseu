@@ -18,7 +18,6 @@ const SingUp = () => {
     email: user?.email ?? '',
   })
   const router = useRouter()
-  console.log(user)
 
   if (user?.completed) {
     router.push('/')

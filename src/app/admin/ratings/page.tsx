@@ -11,8 +11,7 @@ const RatingCard = ({ data }: { data: RatingType }) => {
 
   const handleShow = async () => {
     setRatings({ ...rating, show: !rating.show })
-    const rts = await updateRating(data.id ?? '', { show: !rating.show })
-    console.log({ rts })
+    await updateRating(data.id ?? '', { show: !rating.show })
   }
 
   return (

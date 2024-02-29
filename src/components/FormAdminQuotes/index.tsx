@@ -45,7 +45,11 @@ const FormAdminQuotes = (props: Props) => {
     toast('Se actualizo la solicitud')
   }
   return (
-    <Modals buttonText="Información" title={props.servicio} showBtn>
+    <Modals
+      blockClass="infoQuotes"
+      title={props.servicio}
+      showBtn
+    >
       {(onClose) => (
         <>
           <div>

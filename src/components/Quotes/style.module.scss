@@ -1,38 +1,49 @@
 .quotes_container {
   .quotes_search {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    
+    label {
+      display: flex;
+      flex-direction: column;
+    }
 
     input {
       border: solid #3d3d3d 1px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      max-width: 500px;
+      border-radius: 8px;
+      margin: 8px 0;
+      width: 350px;
+      padding: 0 5px 0 10px;
+      outline: none;
+      height: 30px;
     }
   }
+
   .quotes {
     display: table;
     width: 100%;
     overflow-y: hidden;
-    border-top: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid #e6e6e6;
     overflow-x: auto;
     max-width: 90vw;
 
     thead {
       tr {
         display: table-row;
-        background: rgb(255, 255, 255);
+        background: #912a2a;
+        color: #f1f1f1;
         text-align: left;
         td {
           font-size: 0.875rem;
           line-height: 1.42857;
           letter-spacing: -0.0009em;
           display: table-cell;
-          border-bottom: 1px solid rgb(221, 221, 221);
+          border-bottom: 5px solid rgb(221, 221, 221);
           vertical-align: middle;
           padding-left: 0.5rem;
           padding-right: 0.5rem;
           height: 48px;
+          font-weight: 600;
           min-width: 15%;
           max-width: 15%;
           width: 15%;
@@ -52,7 +63,7 @@
         display: table-row;
         background: rgb(255, 255, 255);
         text-align: left;
-        cursor: pointer;
+        user-select: none;
         td {
           font-size: 0.875rem;
           line-height: 1.42857;
@@ -68,14 +79,10 @@
           width: 15%;
         }
       }
-    }
-  }
 
-  @media screen and (max-width: 1024px) {
-    .quotes {
-      display: block;
-      overflow-x: auto;
-      max-width: 90vw;
+      tr:hover {
+        background-color: #92202023;
+      }
     }
   }
 }

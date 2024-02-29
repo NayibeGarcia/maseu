@@ -29,11 +29,13 @@
     thead {
       tr {
         display: table-row;
-        background: rgb(255, 255, 255);
+        background: #912a2a;
+        color: #f1f1f1;
         text-align: left;
         td {
           font-size: 0.875rem;
           line-height: 1.42857;
+          font-weight: 600;
           letter-spacing: -0.0009em;
           display: table-cell;
           border-bottom: 1px solid rgb(221, 221, 221);
@@ -60,7 +62,7 @@
         display: table-row;
         background: rgb(255, 255, 255);
         text-align: left;
-        cursor: pointer;
+        user-select: none;
         td {
           font-size: 0.875rem;
           line-height: 1.42857;
@@ -76,14 +78,10 @@
           width: 15%;
         }
       }
-    }
-  }
 
-  @media screen and (max-width: 1024px) {
-    .users_table {
-      display: block;
-      overflow-x: auto;
-      max-width: 90vw;
+      tr:hover {
+        background-color: #92202023;
+      }
     }
   }
 }

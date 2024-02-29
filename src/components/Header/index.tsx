@@ -82,7 +82,7 @@ const Header = () => {
           )}
 
           <DropdownItem className={style.header_admin} key="admin">
-            <Link className={style.header_links} href="/admin">
+            <Link className={style.header_links} href="/admin/quotes">
               <IconAdmin />
               Admin
             </Link>

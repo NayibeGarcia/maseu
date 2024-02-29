@@ -14,8 +14,7 @@ export interface UserType {
 
 export const saveUser = async (user: UserType) => {
   try {
-    const docRef = await addDoc(collection(db, 'users'), user)
-    console.log(docRef)
+    await addDoc(collection(db, 'users'), user)
   } catch (e) {
     console.error('Error adding document: ', e)
   }

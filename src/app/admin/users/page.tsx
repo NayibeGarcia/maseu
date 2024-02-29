@@ -11,12 +11,14 @@ export default function Page() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    ;(async () => {
+    const getUsers = async () => {
       setLoading(true)
       const data = await getAllUsers()
       setUsers(data)
       setLoading(false)
-    })()
+    }
+
+    getUsers()
   }, [user])
 
   return (

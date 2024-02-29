@@ -1,43 +1,42 @@
 "use client";
-import { useState } from "react";
-import { UserAuth } from "@/context/AuthContext";
-import LoginButton from "../LoginButton";
-import Modals from "../Modals";
-import { saveData } from "@/services/crud";
-import style from "./style.module.scss";
-import { toast } from "sonner";
-import { Button } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
-import { SlPaperClip } from "react-icons/sl";
+import { useState } from "react"
+import { UserAuth } from "@/context/AuthContext"
+import LoginButton from "../LoginButton"
+import Modals from "../Modals"
+import { saveData } from "@/services/crud"
+import style from "./style.module.scss"
+import { toast } from "sonner"
+import { Button } from "@nextui-org/react"
+import { useRouter } from "next/navigation"
+import { SlPaperClip } from "react-icons/sl"
 interface Props {
-  title: string;
-  description: string;
-  image: string;
+  title: string
+  description: string
+  image: string
 }
 
 const FormQuotes = ({ title, description, image }: Props) => {
-  const [quote, setQuote] = useState("");
-  const [cupon, setCupon] = useState("");
-  const [file, setFile] = useState<File | null>(null);
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [quote, setQuote] = useState("")
+  const [cupon, setCupon] = useState("")
+  const [file, setFile] = useState<File | null>(null)
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleQuoteChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setQuote(e.target.value);
   };
 
   const handleCuponChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCupon(e.target.value);
+    setCupon(e.target.value)
   };
-  const { user } = UserAuth();
-  const userId = user?.id ?? "";
-  const userEmail = user?.email ?? "";
-  const name = user?.name ?? "";
+  const { user } = UserAuth()
+  const userId = user?.id ?? ""
+  const userEmail = user?.email ?? ""
+  const name = user?.name ?? ""
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log("first");
+    e.preventDefault()
+    setLoading(true)
     const newQuote = {
       userId,
       name,
@@ -50,26 +49,26 @@ const FormQuotes = ({ title, description, image }: Props) => {
       state: "Nuevo",
       quotePrice: "",
       cupon: cupon,
-    };
+    }
 
-    setCupon("");
-    setQuote("");
-    await saveData(newQuote, file);
-    toast("Tu solicitud ha sido creada, por favor revisar tu bandeja de correo.");
-    setLoading(false);
+    setCupon("")
+    setQuote("")
+    await saveData(newQuote, file)
+    toast("Tu solicitud ha sido creada, por favor revisar tu bandeja de correo.")
+    setLoading(false)
     setTimeout(() => {
-      router.push("/account");
-    }, 300);
-  };
+      router.push("/account")
+    }, 300)
+  }
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const archivos = e.target.files;
+    const archivos = e.target.files
 
     if (archivos && archivos.length > 0) {
-      const firstFile = archivos[0];
-      setFile(firstFile);
+      const firstFile = archivos[0]
+      setFile(firstFile)
     }
-  };
+  }
 
   return (
     <Modals
@@ -161,4 +160,4 @@ const FormQuotes = ({ title, description, image }: Props) => {
   );
 };
 
-export default FormQuotes;
+export default FormQuotes

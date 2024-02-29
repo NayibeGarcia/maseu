@@ -65,11 +65,11 @@ const Ratings = () => {
   }
 
   useEffect(() => {
-    ;(async () => {
+    const getRating = async () => {
       const rts = await getRatingByEmail(user?.email)
-      console.log({ rts })
       setState({ ...state, rating: rts })
-    })()
+    }
+    getRating()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 

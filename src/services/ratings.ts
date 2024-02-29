@@ -21,8 +21,7 @@ export interface RatingType {
 
 export const saveRating = async (rating: RatingType) => {
   try {
-    const docRef = await addDoc(collection(db, 'ratings'), rating)
-    console.log(docRef)
+    await addDoc(collection(db, 'ratings'), rating)
   } catch (e) {
     console.error('Error adding document: ', e)
   }
@@ -78,7 +77,7 @@ export const updateRating = async (
     // Update the document with the new data
     await updateDoc(docRef, newData)
 
-    console.log('Document updated successfully!')
+    console.info('Document updated successfully!')
   } catch (error) {
     console.error('Error updating document:', error)
     throw error

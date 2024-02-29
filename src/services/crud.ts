@@ -46,8 +46,7 @@ const UpLoadImage = async (file: File, id: string) => {
   const storageRef = ref(storage, `quotes/${id}`)
 
   try {
-    const rts = await uploadBytes(storageRef, file)
-    console.log('Imagen cargada con éxito', rts)
+    await uploadBytes(storageRef, file)
   } catch (error) {
     console.error('Error al cargar la imagen', error)
   }
@@ -120,7 +119,6 @@ export const updateDocument = async (
 
     // Update the document with the new data
     await updateDoc(docRef, newData)
-    console.log({ newData })
 
     await fetch('/api/send/update', {
       method: 'POST',
@@ -132,7 +130,7 @@ export const updateDocument = async (
       }),
     })
 
-    console.log('Document updated successfully!')
+    console.info('Document updated successfully!')
   } catch (error) {
     console.error('Error updating document:', error)
     throw error

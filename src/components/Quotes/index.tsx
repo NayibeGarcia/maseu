@@ -6,6 +6,7 @@ import { getDate, type Timestamp } from '@/utils/helper'
 
 import FormAdminQuotes from '../FormAdminQuotes'
 import LoadingPage from '@/app/loading'
+import FormNewQuotes from '../FormNewQuotes'
 
 const Quotes = () => {
   const [quotes, setQuotes] = useState<QuoteFireType[] | undefined>()
@@ -30,10 +31,8 @@ const Quotes = () => {
     setLoading(true)
     ;(async () => {
       const quotes = await getAllQuotes(email)
-      console.log("qqqqqqqqqqqqqq",quotes)
       quotes.sort((a, b) => {
         if (sort) {
-          console.log("wwwwwwwwwww",a.quoteDate.seconds)
           return a?.quoteDate?.seconds - b?.quoteDate?.seconds
         }
         return b?.quoteDate?.seconds - a?.quoteDate?.seconds
@@ -46,14 +45,18 @@ const Quotes = () => {
   return (
     <div className={style.quotes_container}>
       <div className={style.quotes_search}>
-        <label htmlFor="email">Buscar usuario por correo</label>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          id="email"
-          name="email"
-          type="text"
-        />
+        <label>
+          Buscar usuario por correo
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            name="email"
+            type="text"
+          />
+        </label>
+        <FormNewQuotes />
       </div>
+
       <table className={style.quotes}>
         <thead>
           <tr>

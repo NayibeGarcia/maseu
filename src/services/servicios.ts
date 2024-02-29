@@ -9,13 +9,12 @@ export interface ServicesType {
 
 export const saveServices = async () => {
   try {
-    const docRef = await addDoc(collection(db, 'services'), {
+    await addDoc(collection(db, 'services'), {
       title: 'Linea de aguas',
       description:
         'Nuestro serivicio se encuentra direccionado en la extracción, conducción, elevación y tratamiento de aguas:',
       image: 'https://swiperjs.com/demos/images/nature-3.jpg',
     })
-    console.log(docRef)
   } catch (e) {
     console.error('Error adding document: ', e)
   }

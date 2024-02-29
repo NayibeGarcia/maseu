@@ -43,8 +43,7 @@ const htmlContent = (data: any) => `
 export async function POST(request: Request) {
   const data = await request.json()
 
-  console.log(data)
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: mailOptions.from, // sender address
     to: data.email, // list of receivers
     subject: `Notificacion: Cotizacion M.A.S`, // Subject line

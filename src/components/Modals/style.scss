@@ -1,6 +1,37 @@
 .modal_trigger_newquote {
-  width: 200px;
-  height: 80px;
-  border-radius: 20px;
-  border: solid #ddd 1px;
+  background-color: #912a2a;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #f8f8f8;
+  margin-bottom: 30px;
+  outline: none;
 }
+
+.modal_trigger_infoQuotes {
+  background-color: transparent;
+  padding: 0;
+  width: 40px;
+  min-width: auto;
+  outline: none;
+  overflow: auto;
+}
+
+.modal_trigger_infoQuotes::after {
+  content: url('./info.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_trigger_infoQuotes:hover::before {
+  content: "Información";
+  position: absolute;
+  bottom: 10px;
+  right: -60px;
+  z-index: 2;
+  font-size: 12px;
+}
+

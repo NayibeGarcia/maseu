@@ -47,9 +47,8 @@ export const AuthContextProvider = ({
   useEffect(() => {
     let firstTime = true
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      ;(async () => {
+      const getUser = async () => {
         const data = await getUserByEmail(currentUser?.email)
-        console.log({ currentUser })
 
         if (!firstTime && currentUser && !data.length) {
           router.push('/signup')
@@ -66,7 +65,9 @@ export const AuthContextProvider = ({
           setUser(null)
         }
         firstTime = false
-      })()
+      }
+
+      getUser()
     })
 
     return () => unsubscribe()
