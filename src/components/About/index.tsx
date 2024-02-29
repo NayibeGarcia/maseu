@@ -7,7 +7,7 @@ const About = () => {
       <div className={style.about}>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FMASEU_Mision.png?alt=media&token=dddb3c46-4bdc-413d-aa47-622d590d35fb"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Mision.png?alt=media&token=dddb3c46-4bdc-413d-aa47-622d590d35fb"
             alt="mision"
           />
           <strong>
@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FMASEU_Vision.png?alt=media&token=957ea447-926f-4a67-8874-7c83c1364cd7"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Vision.png?alt=media&token=957ea447-926f-4a67-8874-7c83c1364cd7"
             alt="vision"
           />
           <strong>
@@ -38,7 +38,7 @@ const About = () => {
         </div>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/sitio%2FMASEU_Calidad.png?alt=media&token=8053fb8e-ca0f-4df6-a7d2-b12eecb0dbd4"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Calidad.png?alt=media&token=8053fb8e-ca0f-4df6-a7d2-b12eecb0dbd4"
             alt="calidad"
           />
           <strong>
