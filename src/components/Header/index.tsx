@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import style from "./styles.module.scss";
+"use client"
+import Link from "next/link"
+import style from "./styles.module.scss"
 import {
   Dropdown,
   DropdownTrigger,
@@ -10,7 +10,6 @@ import {
   Avatar,
 } from "@nextui-org/react";
 import { UserAuth } from "@/context/AuthContext";
-import "./style.css";
 import { IconMenu } from "./Icons/IconMenu";
 import { IconInicio } from "./Icons/IconInicio";
 import { IconHelp } from "./Icons/IconHelp";
@@ -28,7 +27,7 @@ const Header = () => {
       <Link href="/">
         <img
           className={style.logo}
-          src="https://www.mantenimientoseu.com/images/logo-mantenimientoseu-horizontal.png"
+          src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2Flogo-mb.png?alt=media&token=c2a92f88-c682-4959-9bcf-83df1c63cbe8"
           alt="Logo"
         />
       </Link>

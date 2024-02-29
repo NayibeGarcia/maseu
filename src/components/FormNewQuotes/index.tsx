@@ -112,7 +112,7 @@ const FormNewQuotes = () => {
       title={'Crear Solicitud para un usuario'}
       showBtn={true}
       blockClass="newquote"
-      buttonText="Cotizar"
+      buttonText="Nueva Cotización"
     >
       {(onClose) => (
         <>

@@ -1,4 +1,4 @@
-import style from "./style.module.scss";
+import style from "./style.module.scss"
 
 const About = () => {
   return (
@@ -7,7 +7,7 @@ const About = () => {
       <div className={style.about}>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Mision.png?alt=media&token=dddb3c46-4bdc-413d-aa47-622d590d35fb"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Mision.png?alt=media&token=f986c0a2-7088-465b-859a-274f8cd06945"
             alt="mision"
           />
           <strong>
@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Vision.png?alt=media&token=957ea447-926f-4a67-8874-7c83c1364cd7"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Vision.png?alt=media&token=7395ef70-451e-4b6b-9191-ff7fef8fb251"
             alt="vision"
           />
           <strong>
@@ -38,7 +38,7 @@ const About = () => {
         </div>
         <div className={style.about_card}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Calidad.png?alt=media&token=8053fb8e-ca0f-4df6-a7d2-b12eecb0dbd4"
+            src="https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/sitio%2FMASEU_Calidad.png?alt=media&token=c4843566-4876-4535-a7bd-572072b638db"
             alt="calidad"
           />
           <strong>
