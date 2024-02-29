@@ -89,10 +89,10 @@ export default function Page() {
                               Imagen:
                               <a
                                 target="_blank"
-                                href={`https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/quotes%2F${quote.id}?alt=media`}
+                                href={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${quote.id}?alt=media`}
                               >
                                 <img
-                                  src={`https://firebasestorage.googleapis.com/v0/b/mantenimiento-angie.appspot.com/o/quotes%2F${quote.id}?alt=media`}
+                                  src={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${quote.id}?alt=media`}
                                   alt=""
                                   style={{ height: '100px' }}
                                 />
