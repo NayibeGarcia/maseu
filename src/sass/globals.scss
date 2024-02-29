@@ -49,3 +49,18 @@
     }
   }
 }
+
+.primary_btn {
+  background-color: #912a2a;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #f8f8f8;
+  margin-bottom: 30px;
+}
+
+.primary_btn:hover {
+  opacity: 0.8;
+}

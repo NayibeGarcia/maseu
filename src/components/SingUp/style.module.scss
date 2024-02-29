@@ -5,11 +5,10 @@
   width: 100%;
 
   .form_sign {
-    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    padding: 30px 40px;
+    padding: 30px 100px;
     border-radius: 20px;
 
     &_title {
@@ -25,6 +24,9 @@
       input {
         border: solid 1px #d5d5d5;
         padding: 0 5px;
+        outline: none;
+        height: 30px;
+        margin-top: 10PX;
       }
 
       input[type='number']::-webkit-inner-spin-button,
@@ -37,6 +39,10 @@
     button {
       margin: 20px 30px 0;
       border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 575px){
+      padding: 30px 40px;
     }
   }
 }
