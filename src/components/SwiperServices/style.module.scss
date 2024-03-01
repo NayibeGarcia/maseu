@@ -8,12 +8,15 @@
   flex-direction: column;
   max-width: 220px;
   align-items: center;
+  height: 100%;
 
   &_info {
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     min-width: 100%;
+    height: 100%;
+    justify-content: space-between;
   }
 
   &_image {
@@ -49,10 +52,9 @@
     background-color: #912a2a;
     padding: 10px 30px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
     font-weight: 600;
     font-size: 14px;
     color: #f8f8f8;
-    margin-bottom: 30px;
   }
 }
