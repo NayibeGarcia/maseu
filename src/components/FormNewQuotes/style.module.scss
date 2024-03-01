@@ -3,55 +3,95 @@
   align-items: center;
   justify-content: space-between;
 
-  &_info {
-    width: 30%;
-    &_image {
-      width: 300px;
-      height: 150px;
-      object-fit: cover;
+  &_data {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+
+    @media only screen and (max-width: 575px) {
+      margin: 0 auto 10px;
+    }
+  }
+
+  &_create {
+    label {
+      max-width: 485px;
+      justify-content: space-between;
+      min-height: 46px;
+    }
+
+    div {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      width: 154px !important;
+      padding: 10px 20px;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    textarea {
+      border: solid #3d3d3d 1px;
+      border-radius: 5px;
+      padding: 0 5px 0 10px;
+      width: 310px;
+      outline: none;
+    }
+
+    &_cancel {
+      background-color: #ccc;
       border-radius: 20px;
-    }
-
-    &_title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    &_description {
-      font-size: 0.8rem;
+      color: #fff;
     }
   }
 
   &_quotes {
-    width: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-    &_title {
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    &_text,
-    &_cupon {
+    label {
       display: flex;
-      flex-direction: column;
-
-      textarea,
-      input {
-        width: 100%;
-        border: solid #ddd 1px;
-        padding: 5px 10px;
-        border-radius: 8px;
-        margin-top: 3px;
-      }
+      flex-direction: row;
+      align-items: center;
     }
 
-    &_text {
-      margin-bottom: 20px;
+    input {
+      border: solid #3d3d3d 1px;
+      border-radius: 8px;
+      margin: 8px 0;
+      width: 310px;
+      padding: 0 5px 0 10px;
+      outline: none;
+      height: 30px;
+      margin-left: 10px;
+    }
+
+    button {
+      margin: 10px 0px;
+      width: 100px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      align-items: center;
       label {
-        font-size: 0.7rem;
+        flex-direction: column;
+        align-items: flex-start;
         margin-bottom: 5px;
-        color: #a4a4a4;
+      }
+
+      textarea, input {
+        width: 300px;
+        margin: 0;
       }
     }
   }
+
 }
