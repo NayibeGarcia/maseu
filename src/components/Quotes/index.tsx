@@ -13,6 +13,7 @@ const Quotes = () => {
   const [sort, setSort] = useState(false)
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
+  const dateTitle = screen.width < 575 ? 'Fecha' : 'Fecha de solicitud'
 
   const getData = async () => {
     setLoading(true)
@@ -43,7 +44,7 @@ const Quotes = () => {
   }, [sort, email])
 
   return (
-    <div className={style.quotes_container}>
+    <section className={style.quotes_container}>
       <div className={style.quotes_search}>
         <label>
           Buscar usuario por correo
@@ -57,53 +58,56 @@ const Quotes = () => {
         <FormNewQuotes />
       </div>
 
-      <table className={style.quotes}>
-        <thead>
-          <tr>
-            <td>Estado</td>
-            <td>Nombre</td>
-            <td>Correo</td>
-            <td>Servicio</td>
-            <td className={style.quotes_date} onClick={() => setSort(!sort)}>
-              <p>
-                Fecha de solicitud
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.25rem"
-                  height="1.25rem"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
-                  className={sort ? 'arrow_desc' : 'arrow_acs'}
-                >
-                  <rect width="16rem" height="16rem" fill="none"></rect>
-                  <path d="M215.39111,92.93848A8.00015,8.00015,0,0,0,208,88H48a8,8,0,0,0-5.65674,13.657l80,79.99976a7.99945,7.99945,0,0,0,11.31348,0l80-79.99976A8.00011,8.00011,0,0,0,215.39111,92.93848Z"></path>
-                </svg>
-              </p>
-            </td>
-            <td>Actualizar</td>
-          </tr>
-        </thead>
-        <tbody>
-          {!quotes?.length && !loading && <p>No hay solicitudes</p>}
-          {loading ? (
-            <LoadingPage />
-          ) : (
-            quotes?.map((quote, i) => (
-              <tr key={i}>
-                <td>{quote.state}</td>
-                <td>{quote.name}</td>
-                <td> {quote.userEmail} </td>
-                <td>{quote.servicio}</td>
-                <td>{getDate(quote.quoteDate as Timestamp)}</td>
-                <td>
-                  <FormAdminQuotes {...quote} getData={getData} />
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+      <div className={style.content_quotes}>
+        <table className={style.quotes}>
+          <thead>
+            <tr>
+              <td>Estado</td>
+              <td>Nombre</td>
+              <td>Correo</td>
+              <td>Servicio</td>
+              <td className={style.quotes_date} onClick={() => setSort(!sort)}>
+                <p>
+                  {dateTitle}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.25rem"
+                    height="1.25rem"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    className={sort ? 'arrow_desc' : 'arrow_acs'}
+                  >
+                    <rect width="16rem" height="16rem" fill="none"></rect>
+                    <path d="M215.39111,92.93848A8.00015,8.00015,0,0,0,208,88H48a8,8,0,0,0-5.65674,13.657l80,79.99976a7.99945,7.99945,0,0,0,11.31348,0l80-79.99976A8.00011,8.00011,0,0,0,215.39111,92.93848Z"></path>
+                  </svg>
+                </p>
+              </td>
+              <td>Actualizar</td>
+            </tr>
+          </thead>
+          <tbody>
+            {!quotes?.length && !loading && <p>No hay solicitudes</p>}
+            {loading ? (
+              <LoadingPage />
+            ) : (
+              quotes?.map((quote, i) => (
+                <tr key={i}>
+                  <td>{quote.state}</td>
+                  <td>{quote.name}</td>
+                  <td> {quote.userEmail} </td>
+                  <td>{quote.servicio}</td>
+                  <td>{getDate(quote.quoteDate as Timestamp)}</td>
+                  <td>
+                    <FormAdminQuotes {...quote} getData={getData} />
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+
+    </section>
   )
 }
 

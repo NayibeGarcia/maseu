@@ -1,5 +1,5 @@
 .users {
-  width: 90%;
+  width: 100%;
   &_title {
     text-align: center;
     font-size: 2rem;
@@ -81,6 +81,27 @@
 
       tr:hover {
         background-color: #92202023;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 575px) {
+    .content_users {
+      width: calc(100vw - 10px);
+      overflow-x: scroll;
+    }
+    .content_users::-webkit-scrollbar {
+      display: none;
+    }
+    .users_table {
+      margin: 0 10px;
+
+      thead {
+        tr {
+          td {
+            text-align: center;
+          }
+        }
       }
     }
   }

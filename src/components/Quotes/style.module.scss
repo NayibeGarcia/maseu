@@ -17,6 +17,13 @@
       outline: none;
       height: 30px;
     }
+
+    @media only screen and (max-width: 575px) {
+      padding: 0 10px;
+      input {
+        width: 200px;
+      }
+    }
   }
 
   .quotes {
@@ -82,6 +89,27 @@
 
       tr:hover {
         background-color: #92202023;
+      }
+    }
+
+  }
+  @media only screen and (max-width: 575px) {
+    .content_quotes {
+      width: calc(100vw - 10px);
+      overflow-x: scroll;
+    }
+    .content_quotes::-webkit-scrollbar {
+      display: none;
+    }
+    .quotes {
+      margin: 0 10px;
+
+      thead {
+        tr {
+          td {
+            text-align: center;
+          }
+        }
       }
     }
   }

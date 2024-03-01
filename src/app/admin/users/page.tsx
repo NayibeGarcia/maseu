@@ -22,33 +22,35 @@ export default function Page() {
   }, [user])
 
   return (
-    <div className={style.users}>
+    <section className={style.users}>
       <h1 className={style.users_title}>Nuestros Usuarios</h1>
 
-      <table className={style.users_table}>
-        <thead>
-          <tr>
-            <td>Nombre</td>
-            <td>Correo</td>
-            <td>Telefono</td>
-            <td>Rol</td>
-          </tr>
-        </thead>
-        <tbody>
-          {loading ? (
-            <LoadingPage />
-          ) : (
-            users.map((user, i) => (
-              <tr key={i}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phoneNumber}</td>
-                <td>{user.rol}</td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+      <div className={style.content_users}>
+        <table className={style.users_table}>
+          <thead>
+            <tr>
+              <td>Nombre</td>
+              <td>Correo</td>
+              <td>Telefono</td>
+              <td>Rol</td>
+            </tr>
+          </thead>
+          <tbody>
+            {loading ? (
+              <LoadingPage />
+            ) : (
+              users.map((user, i) => (
+                <tr key={i}>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phoneNumber}</td>
+                  <td>{user.rol}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </section>
   )
 }

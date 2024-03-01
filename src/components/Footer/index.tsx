@@ -8,7 +8,7 @@ const Footer = () => {
         reserved.
       </p>
       <small>
-        Desarrollado por <a href={`https://www.linkedin.com/in/karen-garcia-jaimes/`} target="_blank">Karen García</a> - UTS
+        Desarrollado por <a href='https://www.linkedin.com/in/karen-garcia-jaimes/' target="_blank">Karen García</a> - UTS
       </small>
     </footer>
   )
