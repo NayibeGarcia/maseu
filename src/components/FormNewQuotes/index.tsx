@@ -9,7 +9,7 @@ import { QuoteType, saveData } from '@/services/crud'
 interface FormType {
   name: string
   email: string
-  phoneNumber: number
+  phoneNumber: number | string
   rol?: string
   userId?: string
   servicio: string
@@ -21,7 +21,7 @@ interface FormType {
 const InitialValueForm = {
   name: '',
   email: '',
-  phoneNumber: 0,
+  phoneNumber: '',
   rol: '',
   userId: '',
   servicio: '',
@@ -75,7 +75,7 @@ const FormNewQuotes = () => {
     e.preventDefault()
     const newUser = {
       name: values.name,
-      phoneNumber: values.phoneNumber,
+      phoneNumber: Number(values.phoneNumber),
       email: values.email,
       rol: 'cliente',
       userId: '',
@@ -118,11 +118,12 @@ const FormNewQuotes = () => {
         <>
           {user || createUser ? (
             createUser ? (
-              <form onSubmit={handleSubmitUser}>
-                <p className={style.form_sign_title}>Crear Usuario</p>
-
-                <div className={style.form_sign_input}>
-                  <label htmlFor="name">Nombre</label>
+              <form
+                className={`${style.form_quotes} ${style.form_create}`}
+                onSubmit={handleSubmitUser}
+              >
+                <label>
+                  Nombre:
                   <input
                     type="text"
                     id="name"
@@ -132,9 +133,10 @@ const FormNewQuotes = () => {
                     placeholder="Ingresa tu nombre"
                     required
                   />
-                </div>
-                <div className={style.form_sign_input}>
-                  <label htmlFor="email">Correo</label>
+                </label>
+
+                <label>
+                  Correo:
                   <input
                     type="text"
                     id="name"
@@ -145,9 +147,10 @@ const FormNewQuotes = () => {
                     placeholder=""
                     required
                   />
-                </div>
-                <div className={style.form_sign_input}>
-                  <label htmlFor="phoneNumber">Numero celular</label>
+                </label>
+
+                <label>
+                  Número celular:
                   <input
                     type="number"
                     id="phoneNumber"
@@ -157,36 +160,45 @@ const FormNewQuotes = () => {
                     placeholder="Ingresa tu numero"
                     required
                   />
+                </label>
+
+                <div>
+                  <button
+                    className={style.form_create_cancel}
+                    type="button"
+                    onClick={() => {
+                      onClose()
+                      setUser(null)
+                      setCreateUser(false)
+                      setValue(InitialValueForm)
+                    }}
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    className='primary_btn'
+                    type="submit"
+                    disabled={values.name === '' || values.phoneNumber === ''}
+                  >
+                    Crear Usuario
+                  </button>
                 </div>
 
-                <Button
-                  type="button"
-                  color="danger"
-                  onClick={() => {
-                    onClose()
-                    setUser(null)
-                    setCreateUser(false)
-                    setValue(InitialValueForm)
-                  }}
-                >
-                  Cancelar
-                </Button>
-                <Button type="submit">Crear Usuario</Button>
               </form>
             ) : (
-              <div>
-                <p className={style.form_sign_title}>Crear contizacion</p>
-                <div>
+              <section>
+                <div className={style.form_data}>
                   <p>Nombre: {values.name}</p>
                   <p>Email: {values.email}</p>
-                  <p>Numero: {values.phoneNumber}</p>
+                  <p>Número telefónico: {values.phoneNumber}</p>
                 </div>
+
                 <form
-                  className={style.form_sign}
+                  className={`${style.form_quotes} ${style.form_create}`}
                   onSubmit={(e) => handleSubmit(e, onClose)}
                 >
-                  <div className={style.form_quotes_text}>
-                    <label htmlFor="servicio">servicio.</label>
+                  <label htmlFor="servicio">
+                    servicio:
                     <input
                       type="text"
                       id="servicio"
@@ -196,80 +208,89 @@ const FormNewQuotes = () => {
                       placeholder="Nombre del Servicio"
                       required
                     />
-                  </div>
+                  </label>
 
-                  <div className={style.form_quotes_text}>
-                    <label htmlFor="requestContent">
-                      Solicitud del cliente.
-                    </label>
+                  <label>
+                    Solicitud del cliente:
                     <textarea
                       id="requestContent"
+                      rows={1}
                       name="requestContent"
                       value={values.requestContent}
                       onChange={handleChange}
                       placeholder="Solicitud del cliente..."
                       required
                     />
-                  </div>
+                  </label>
 
-                  <div className={style.form_quotes_text}>
-                    <label htmlFor="requestAnswer">Cotizacion.</label>
+                  <label>
+                    Cotizacion:
                     <textarea
                       id="requestAnswer"
+                      rows={1}
                       name="requestAnswer"
                       value={values.requestAnswer}
                       onChange={handleChange}
                       placeholder="Cotizacion..."
                       required
                     />
-                  </div>
+                  </label>
 
-                  <div className={style.form_quotes_text}>
-                    <label htmlFor="quotePrice">Precio.</label>
+                  <label>
+                    Precio:
                     <input
                       type="text"
                       id="quotePrice"
                       name="quotePrice"
                       value={values.quotePrice}
                       onChange={handleChange}
-                      placeholder="Nombre del Servicio"
+                      placeholder="Precio del Servicio"
                       required
                     />
-                  </div>
+                  </label>
 
-                  <Button
-                    type="button"
-                    color="danger"
-                    onClick={() => {
-                      onClose()
-                      setUser(null)
-                      setValue(InitialValueForm)
-                    }}
-                  >
-                    Cancelar
-                  </Button>
-                  <Button type="submit">Crear Cotizacion</Button>
+                  <div>
+                    <button
+                      className={style.form_create_cancel}
+                      type="button"
+                      onClick={() => {
+                        onClose()
+                        setUser(null)
+                        setValue(InitialValueForm)
+                      }}
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      className='primary_btn'
+                      type="submit"
+                      disabled={
+                        values.servicio === '' ||
+                        values.requestContent === '' ||
+                        values.requestAnswer === '' ||
+                        values.quotePrice === ''
+                      }
+                    >Crear Cotizacion</button>
+                  </div>
                 </form>
-              </div>
+              </section>
             )
           ) : (
-            <div className={style.form}>
-              <form className={style.form_quotes} onSubmit={handleSubmitEmail}>
-                <div className={style.form_quotes_email}>
-                  <label htmlFor="email">Ingresa el correo del cliente:</label>
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    required
-                  />
-                </div>
-                <Button type="submit">Enviar</Button>
-              </form>
-            </div>
+            <form className={style.form_quotes} onSubmit={handleSubmitEmail}>
+              <label>
+                Ingresa el correo del cliente:
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  required
+                />
+              </label>
+              <button className='primary_btn' type="submit">Enviar</button>
+            </form>
           )}
         </>
       )}
