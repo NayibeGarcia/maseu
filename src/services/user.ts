@@ -5,6 +5,11 @@ export interface UserType {
   id?: string
   userId?: string
   name: string
+  lastname: string
+  document: number
+  typeDocument: string
+  dataTreatment: boolean
+  conditionsTerms: boolean
   email: string
   phoneNumber: number
   rol?: string
