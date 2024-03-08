@@ -5,6 +5,7 @@ export interface ServicesType {
   title: string
   description: string
   image: string
+  top: boolean
 }
 
 export const saveServices = async () => {

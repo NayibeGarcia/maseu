@@ -13,7 +13,8 @@ import StarRating from '../StarRating'
 
 const SwiperRatings = ({ ratings }: { ratings: RatingType[] }) => {
   return (
-    <Swiper
+    <div className={style.swiper}>
+      <Swiper
       grabCursor={true}
       slidesPerView={'auto'}
       className="swiper-services"
@@ -36,6 +37,8 @@ const SwiperRatings = ({ ratings }: { ratings: RatingType[] }) => {
         </SwiperSlide>
       ))}
     </Swiper>
+    </div>
+    
   )
 }
 

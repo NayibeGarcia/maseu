@@ -38,6 +38,9 @@ export default function RootLayout({
           <li className={active === 'ratings' ? style.admin_layout_active : ''}>
             <Link href="/admin/ratings">Calificaciones</Link>
           </li>
+          <li className={active === 'services' ? style.admin_layout_active : ''}>
+            <Link href="/admin/services">Servicios</Link>
+          </li>
         </ul>
       </nav>
       {children}
