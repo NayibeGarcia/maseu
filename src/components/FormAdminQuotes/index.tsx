@@ -11,6 +11,7 @@ interface Props extends QuoteFireType {
 const FormAdminQuotes = (props: Props) => {
   const [quote, setQuote] = useState('')
   const [price, setPrice] = useState('')
+  const [nroOrder, setNroOrder] = useState('')
 
   const handleQuoteChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setQuote(e.target.value)
@@ -18,6 +19,10 @@ const FormAdminQuotes = (props: Props) => {
 
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPrice(e.target.value)
+  }
+
+  const handleNroOrderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNroOrder(e.target.value)
   }
 
   const handleSubmit = (e: React.FormEvent | any, callback: () => void) => {
@@ -34,10 +39,12 @@ const FormAdminQuotes = (props: Props) => {
             requestAnswer: quote,
             state: 'abierto',
             quotePrice: price,
+            nroOrder: nroOrder
           }
 
     setPrice('')
     setQuote('')
+    setNroOrder('')
 
     updateDocument(props.id as string, updateQuote, props.name, props.userEmail)
     callback()
@@ -128,6 +135,18 @@ const FormAdminQuotes = (props: Props) => {
                   value={price}
                   onChange={handlePriceChange}
                   placeholder="Precio de la cotización"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="price">Número de Orden:</label>
+                <input
+                  type="text"
+                  id="nroOrder"
+                  name="nroOrder"
+                  value={nroOrder}
+                  onChange={handleNroOrderChange}
+                  placeholder="Número de la orden"
                   required
                 />
               </div>

@@ -63,6 +63,7 @@ const Quotes = () => {
           <thead>
             <tr>
               <td>Estado</td>
+              <td>Nro. Orden</td>
               <td>Nombre</td>
               <td>Correo</td>
               <td>Servicio</td>
@@ -93,6 +94,7 @@ const Quotes = () => {
               quotes?.map((quote, i) => (
                 <tr key={i}>
                   <td>{quote.state}</td>
+                  <td>{quote.nroOrder}</td>
                   <td>{quote.name}</td>
                   <td> {quote.userEmail} </td>
                   <td>{quote.servicio}</td>

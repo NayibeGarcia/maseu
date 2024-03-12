@@ -24,6 +24,7 @@ export interface QuoteType {
   quotePrice: string
   cupon: string
   hasImage?: boolean
+  nroOrder?: string
 }
 
 export interface QuoteFireType {
@@ -40,6 +41,7 @@ export interface QuoteFireType {
   quotePrice: string
   cupon: string
   hasImage: boolean
+  nroOrder?: string
 }
 
 const UpLoadImage = async (file: File, id: string) => {
@@ -127,6 +129,7 @@ export const updateDocument = async (
         email: userEmail,
         answer: newData.requestAnswer,
         price: newData.quotePrice,
+        nroOrder: newData.nroOrder
       }),
     })
 

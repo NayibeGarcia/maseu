@@ -54,8 +54,9 @@ const htmlContent = (data: any) => `
         <div>
             <p>
                 Es un placer informarte que hemos creado una cotización personalizada para el servicio que solicitaste
-                en nuestra página web. El precio total para el proyecto es de <strong>${data.price}</strong>, que incluye todos los
-                detalles y beneficios que hemos diseñado especialmente para ti.
+                en nuestra página web. 
+                <p>El precio total para el proyecto es de <strong>${data.price}</strong>, que incluye todos los
+                detalles y beneficios que hemos diseñado especialmente para ti. </p>
             </p>
             <p>Nuestro especialista ha dejado las siguientes observaciones: <p class="rta">${data.answer}</p></p>
             <p>

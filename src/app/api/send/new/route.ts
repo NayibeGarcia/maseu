@@ -47,7 +47,8 @@ const htmlContent = (data: any) => `
     </div>
     <div class="content">
         <p class="saludo">Estimado cliente ${data.name},</p>
-        <p>Le informamos que hemos creado su solicitud de cotización. En nuestra empresa, nos esforzamos por brindar un
+        <p>Le informamos que hemos creado su solicitud de cotización.</p> 
+        <p>En nuestra empresa, nos esforzamos por brindar un
             servicio confiable y de alta calidad. Nuestro equipo está comprometido con la satisfacción del cliente y la
             transparencia en cada paso del proceso. Pronto uno de nuestros asesores se estara comunicando con usted.</p>
         <p>Si tiene alguna pregunta o necesita más detalles, no dude en ponerse en contacto con nosotros. ¡Gracias por
