@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { UserAuth } from '@/context/AuthContext'
 import LoadingPage from '@/app/loading'
 import { getAllServices, ServicesType } from '@/services/servicios'
-import FormAdminQuotes from '@/components/FormAdminQuotes'
+import FormServices from '@/components/FormServices'
 
 export default function Page() {
   const { user } = UserAuth()
@@ -35,6 +35,7 @@ export default function Page() {
               <td>Nombre</td>
               <td>Descripción</td>
               <td>TOP</td>
+              <td>Estado</td>
               <td>Editar</td>
             </tr>
           </thead>
@@ -47,8 +48,9 @@ export default function Page() {
                   <td>{service.title}</td>
                   <td>{service.description}</td>
                   <td>{service.top? 'SI' : 'NO'}</td>
+                  <td>{service.active? 'Activo' : 'Inactivo'}</td>
                   <td>
-                    <FormAdminQuotes {...service} getData={getAllServices} />
+                    <FormServices {...service} getData={getAllServices} />
                   </td>
                 </tr>
                 
