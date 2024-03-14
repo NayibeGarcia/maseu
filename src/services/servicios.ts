@@ -80,14 +80,14 @@ export const saveData = async (service: ServicesType, file?: File | null) => {
   try {
     const docRef = await addDoc(collection(db, "services"), {
       ...service,
-      hasImage: !!file,
     });
-    file && UpLoadImage(file, docRef.id);
     await fetch("/api/send/new", {
       method: "POST",
       body: JSON.stringify({
         description: service.description,
         title: service.title,
+        top: service.top,
+        active: service.active,
       }),
     });
   } catch (e) {
