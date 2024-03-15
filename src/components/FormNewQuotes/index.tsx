@@ -1,9 +1,10 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modals from '../Modals'
 import style from './style.module.scss'
 import { UserType, getUserByEmail, saveUser } from '@/services/user'
 import { QuoteType, saveData } from '@/services/crud'
+import { ServicesType, getAllServices } from '@/services/servicios'
 
 interface FormType {
   name: string
@@ -33,6 +34,16 @@ const FormNewQuotes = () => {
   const [values, setValue] = useState<FormType>(InitialValueForm)
   const [user, setUser] = useState<UserType | null>(null)
   const [createUser, setCreateUser] = useState(false)
+  const [services, setServices] = useState<ServicesType[]>([])
+
+  useEffect(() => {
+    const getServices = async () => {
+      const data = await getAllServices()
+      setServices(data)
+    }
+
+    getServices()
+  }, [])
 
   const getUserAndSave = async (createUser = true) => {
     const fireUsers = await getUserByEmail(values.email)
@@ -55,9 +66,11 @@ const FormNewQuotes = () => {
   }
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target
+
+    console.log('select', name, value)
 
     setValue({
       ...values,
@@ -198,15 +211,14 @@ const FormNewQuotes = () => {
                 >
                   <label htmlFor="servicio">
                     servicio:
-                    <input
-                      type="text"
-                      id="servicio"
-                      name="servicio"
-                      value={values.servicio}
-                      onChange={handleChange}
-                      placeholder="Nombre del Servicio"
-                      required
-                    />
+                    <select name="servicio" onChange={handleChange}>
+                      {services.map(({ title }) => (
+                        <option
+                          key={title}
+                          value={title}
+                        >{title}</option>
+                      ))}
+                    </select>
                   </label>
 
                   <label>

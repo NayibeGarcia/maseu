@@ -38,7 +38,7 @@ export default function Modals({
       </Button>
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent className="max-w-3xl max-h-[95vh] overflow-scroll">
+        <ModalContent className="max-w-3xl max-h-[95vh] overflow-scroll sm:overflow-hidden">
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
