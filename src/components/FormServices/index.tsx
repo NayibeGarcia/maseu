@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Modals from "../Modals"
-import { ServicesType, getAllServices, updateServices } from "@/services/servicios"
+import { ServicesType, updateServices } from "@/services/servicios"
 import { toast } from "sonner"
 import style from './style.module.scss'
 
@@ -15,16 +15,6 @@ const FormServices = (props: Props) => {
     top: props.top,
     active: props.active
   })
-  const [services, setServices] = useState<ServicesType[]>([])
-
-  useEffect(() => {
-    const getServices = async () => {
-      const data = await getAllServices()
-      setServices(data)
-    }
-
-    getServices()
-  }, [])
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -45,6 +35,12 @@ const FormServices = (props: Props) => {
     callback()
     props.getData()
     toast("Se actualizo la solicitud")
+    setData({
+      title: '',
+      description: '',
+      top: false,
+      active: false
+    })
   }
 
   return (
@@ -53,15 +49,15 @@ const FormServices = (props: Props) => {
         <form onSubmit={(e) => handleSubmit(e, onClose)} className={style.form_service}>
           <div className={style.content_input}>
             <label htmlFor="quote">Servicio:</label>
-            <select name="servicio" onChange={handleServiceChange}>
-              {services.map(({ title }) => (
-                <option
-                  selected={title === data.title}
-                  key={title}
-                  value={title}
-                >{title}</option>
-              ))}
-            </select>
+            <input
+              type="text"
+              id="service"
+              name="title"
+              value={data.title}
+              onChange={handleServiceChange}
+              placeholder="Servicio"
+              required
+            />
           </div>
 
           <div>

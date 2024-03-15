@@ -32,6 +32,22 @@ const FormNewService = () => {
     // updateServices(props.id as string, uService)
     callback()
     toast("Se actualizo la solicitud")
+    setData({
+      title: '',
+      description: '',
+      top: false,
+      active: false
+    })
+  }
+
+  const handleClose = (closeModal: () => void) => {
+    closeModal()
+    setData({
+      title: '',
+      description: '',
+      top: false,
+      active: false
+    })
   }
 
   return (
@@ -97,7 +113,7 @@ const FormNewService = () => {
             <button
               className={style.btn_cancel}
               type="button"
-              onClick={onClose}
+              onClick={() => handleClose(onClose)}
             >
               Cancelar
             </button>
