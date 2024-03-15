@@ -1,109 +1,121 @@
 .services {
-    width: 100%;
-    &_title {
+  width: 100%;
+  &_title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c2dfff;
+    padding: 20px 50px;
+    border-radius: 10px;
+
+    span {
+      width: 25%;
       text-align: center;
-      font-size: 2rem;
-      margin: 20px 0;
     }
-  
-    &_header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #c2dfff;
-      padding: 20px 50px;
-      border-radius: 10px;
-  
-      span {
-        width: 25%;
-        text-align: center;
+  }
+
+  .services_table {
+    display: table;
+    width: 100%;
+    overflow-y: hidden;
+    border-top: 1px solid rgb(230, 230, 230);
+
+    thead {
+      tr {
+        display: table-row;
+        background: #912a2a;
+        color: #f1f1f1;
+        text-align: left;
+        td {
+          font-size: 0.875rem;
+          line-height: 1.42857;
+          font-weight: 600;
+          letter-spacing: -0.0009em;
+          display: table-cell;
+          border-bottom: 1px solid rgb(221, 221, 221);
+          vertical-align: middle;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          height: 48px;
+          min-width: 15%;
+          max-width: 15%;
+          width: 15%;
+        }
+        .account_date {
+          cursor: pointer;
+          p {
+            display: flex;
+          }
+        }
       }
     }
-  
+
+    tbody {
+      display: table-row-group;
+      tr {
+        display: table-row;
+        background: rgb(255, 255, 255);
+        text-align: left;
+        user-select: none;
+        td {
+          font-size: 0.875rem;
+          line-height: 1.42857;
+          letter-spacing: -0.0009em;
+          display: table-cell;
+          border-bottom: 1px solid rgb(221, 221, 221);
+          vertical-align: middle;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          height: 48px;
+          min-width: 15%;
+          max-width: 15%;
+          width: 15%;
+        }
+      }
+
+      tr:hover {
+        background-color: #92202023;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 575px) {
+    .content_services {
+      width: calc(100vw - 10px);
+      overflow-x: scroll;
+    }
+    .content_services::-webkit-scrollbar {
+      display: none;
+    }
     .services_table {
-      display: table;
-      width: 100%;
-      overflow-y: hidden;
-      border-top: 1px solid rgb(230, 230, 230);
-  
+      margin: 0 10px;
+
       thead {
         tr {
-          display: table-row;
-          background: #912a2a;
-          color: #f1f1f1;
-          text-align: left;
           td {
-            font-size: 0.875rem;
-            line-height: 1.42857;
-            font-weight: 600;
-            letter-spacing: -0.0009em;
-            display: table-cell;
-            border-bottom: 1px solid rgb(221, 221, 221);
-            vertical-align: middle;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            height: 48px;
-            min-width: 15%;
-            max-width: 15%;
-            width: 15%;
-          }
-          .account_date {
-            cursor: pointer;
-            p {
-              display: flex;
-            }
-          }
-        }
-      }
-  
-      tbody {
-        display: table-row-group;
-        tr {
-          display: table-row;
-          background: rgb(255, 255, 255);
-          text-align: left;
-          user-select: none;
-          td {
-            font-size: 0.875rem;
-            line-height: 1.42857;
-            letter-spacing: -0.0009em;
-            display: table-cell;
-            border-bottom: 1px solid rgb(221, 221, 221);
-            vertical-align: middle;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            height: 48px;
-            min-width: 15%;
-            max-width: 15%;
-            width: 15%;
-          }
-        }
-  
-        tr:hover {
-          background-color: #92202023;
-        }
-      }
-    }
-  
-    @media only screen and (max-width: 575px) {
-      .content_services {
-        width: calc(100vw - 10px);
-        overflow-x: scroll;
-      }
-      .content_services::-webkit-scrollbar {
-        display: none;
-      }
-      .services_table {
-        margin: 0 10px;
-  
-        thead {
-          tr {
-            td {
-              text-align: center;
-            }
+            text-align: center;
           }
         }
       }
     }
   }
-  
+}
+
+.content_title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 0;
+  }
+}
