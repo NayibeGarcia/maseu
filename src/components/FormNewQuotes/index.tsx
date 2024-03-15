@@ -274,7 +274,6 @@ const FormNewQuotes = () => {
                       className='primary_btn'
                       type="submit"
                       disabled={
-                        values.servicio === '' ||
                         values.requestContent === '' ||
                         values.requestAnswer === '' ||
                         values.quotePrice === ''

@@ -3,6 +3,7 @@ import Modals from '../Modals'
 import { QuoteFireType, updateDocument } from '@/services/crud'
 import { toast } from 'sonner'
 import style from './style.module.scss'
+import { formatPrice } from '@/app/api/send/update/formatPrice'
 
 interface Props extends QuoteFireType {
   getData: () => void
@@ -97,7 +98,7 @@ const FormAdminQuotes = (props: Props) => {
                 <strong>Respuesta de cotizacion:</strong> {props.requestAnswer}
               </p>
               <p>
-                <strong>Precio:</strong> {props.quotePrice}
+                <strong>Precio:</strong>$ {formatPrice(props.quotePrice)}
               </p>
               <button
                 className='primary_btn'
