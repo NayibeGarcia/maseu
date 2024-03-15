@@ -46,7 +46,7 @@ const FormNewService = () => {
 
   return (
     <Modals
-      title={'Crear nuevo servicio para el usuario'}
+      title={'Crear nuevo servicio'}
       showBtn={true}
       blockClass="newService"
       buttonText="Nuevo Servicio"
