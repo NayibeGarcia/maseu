@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import { useState } from "react"
 import Modals from "../Modals"
-import { ServicesType, getAllServices, updateServices } from "@/services/servicios"
 import { toast } from "sonner"
 import style from './style.module.scss'
 
@@ -11,16 +10,7 @@ const FormNewService = () => {
     top: false,
     active: false
   })
-  const [services, setServices] = useState<ServicesType[]>([])
 
-  useEffect(() => {
-    const getServices = async () => {
-      const data = await getAllServices()
-      setServices(data)
-    }
-
-    getServices()
-  }, [])
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -54,16 +44,16 @@ const FormNewService = () => {
       {(onClose) => (
         <form onSubmit={(e) => handleSubmit(e, onClose)} className={style.form_service}>
           <div className={style.content_input}>
-            <label htmlFor="quote">Servicio:</label>
-            <select name="servicio" onChange={handleServiceChange}>
-              {services.map(({ title }) => (
-                <option
-                  selected={title === data.title}
-                  key={title}
-                  value={title}
-                >{title}</option>
-              ))}
-            </select>
+            <label htmlFor="service">Servicio:</label>
+            <input
+              type="text"
+              id="service"
+              name="title"
+              value={data.title}
+              onChange={handleServiceChange}
+              placeholder="Servicio"
+              required
+            />
           </div>
 
           <div>
