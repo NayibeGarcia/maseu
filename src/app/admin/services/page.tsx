@@ -5,6 +5,7 @@ import { UserAuth } from '@/context/AuthContext'
 import LoadingPage from '@/app/loading'
 import { getAllServices, ServicesType } from '@/services/servicios'
 import FormServices from '@/components/FormServices'
+import FormNewService from '@/components/FormNewService'
 
 export default function Page() {
   const { user } = UserAuth()
@@ -27,7 +28,7 @@ export default function Page() {
 
       <div className={style.content_title}>
         <h1 className={style.services_title}>Nuestros Servicios</h1>
-        <button className='primary_btn' type="button">Nuevo Servicio</button>
+        <FormNewService />
       </div>
 
 

@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Modals from "../Modals"
 import { ServicesType, getAllServices, updateServices } from "@/services/servicios"
 import { toast } from "sonner"
 import style from './style.module.scss'
 
-interface Props extends ServicesType {
-  getData: () => void;
-}
-
-const FormServices = (props: Props) => {
+const FormNewService = () => {
   const [data, setData] = useState({
-    title: props.title,
-    description: props.description,
-    top: props.top,
-    active: props.active
+    title: '',
+    description: '',
+    top: false,
+    active: false
   })
   const [services, setServices] = useState<ServicesType[]>([])
 
@@ -43,14 +39,18 @@ const FormServices = (props: Props) => {
   const handleSubmit = (e: React.FormEvent | any, callback: () => void) => {
     e.preventDefault()
 
-    updateServices(props.id as string, uService)
+    // updateServices(props.id as string, uService)
     callback()
-    props.getData()
     toast("Se actualizo la solicitud")
   }
 
   return (
-    <Modals blockClass="infoServices" title="Edición del servicio" showBtn>
+    <Modals
+      title={'Crear nuevo servicio para el usuario'}
+      showBtn={true}
+      blockClass="newService"
+      buttonText="Nuevo Servicio"
+    >
       {(onClose) => (
         <form onSubmit={(e) => handleSubmit(e, onClose)} className={style.form_service}>
           <div className={style.content_input}>
@@ -118,6 +118,6 @@ const FormServices = (props: Props) => {
       )}
     </Modals>
   )
-};
+}
 
-export default FormServices;
+export default FormNewService

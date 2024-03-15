@@ -1,0 +1,79 @@
+.btn_cancel {
+  background-color: #8d8d8d;
+  border-radius: 20px;
+  color: #fff;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.form_service {
+  textarea {
+    border: solid #3d3d3d 1px;
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0 5px 0 10px;
+    width: 100%;
+  }
+  .content_input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  input, select {
+    border: solid #3d3d3d 1px;
+    border-radius: 8px;
+    margin: 8px 0 0;
+    width: 100%;
+    padding: 0 5px 0 10px;
+    outline: none;
+    height: 30px;
+  }
+  label {
+    font-weight: 600;
+  }
+
+  button {
+    width: 154px !important;
+    padding: 10px 20px;
+    height: 40px;
+  }
+
+  .row {
+    display: flex;
+    margin-top: 8px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .content_checks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      margin: 0 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      width: 50px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 575px) {
+  .content_inputs {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .content_buttons {
+    display: flex;
+  }
+}
