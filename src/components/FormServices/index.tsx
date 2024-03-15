@@ -38,12 +38,10 @@ const FormServices = (props: Props) => {
     }
   }
 
-  const uService = {}
-
   const handleSubmit = (e: React.FormEvent | any, callback: () => void) => {
     e.preventDefault()
 
-    updateServices(props.id as string, uService)
+    updateServices(props.id as string, data)
     callback()
     props.getData()
     toast("Se actualizo la solicitud")
