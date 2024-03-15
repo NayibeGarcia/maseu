@@ -3,6 +3,7 @@ import Modals from '../Modals'
 import { QuoteFireType, updateDocument } from '@/services/crud'
 import { toast } from 'sonner'
 import { Button } from '@nextui-org/react'
+import style from './style.module.scss'
 
 interface Props extends QuoteFireType {
   getData: () => void
@@ -59,60 +60,55 @@ const FormAdminQuotes = (props: Props) => {
     >
       {(onClose) => (
         <>
-          <div>
-            <p>Informacion de la cotizacion</p>
-            <div>
-              <div>
-                <p>
-                  <strong>Nombre: </strong> {props.name}
-                </p>
-                <p>
-                  <strong>Id de la solicitud:</strong> {props.id}
-                </p>
-                <p>
-                  <strong>Estado:</strong> {props.state}
-                </p>
-                <p>
-                  <strong>correo:</strong> {props.userEmail}
-                </p>
-                <p>
-                  <strong>cúpon:</strong> {props.cupon}
-                </p>
-                <p>
-                  <strong>Solicitud del cliente:</strong> {props.requestContent}
-                </p>
-                {props.hasImage && (
-                  <p>
-                    Imagen:
-                    <a
-                      target="_blank"
-                      href={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${props.id}?alt=media`}
-                    >
-                      <img
-                        src={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${props.id}?alt=media`}
-                        alt=""
-                        style={{ height: '100px' }}
-                      />
-                    </a>
-                  </p>
-                )}
-              </div>
-            </div>
+          <div className={style.info_quote}>
+            <p>
+              <strong>Nombre: </strong> {props.name}
+            </p>
+            <p>
+              <strong>Id de la solicitud:</strong> {props.id}
+            </p>
+            <p>
+              <strong>Estado:</strong> {props.state}
+            </p>
+            <p>
+              <strong>correo:</strong> {props.userEmail}
+            </p>
+            <p>
+              <strong>cúpon:</strong> {props.cupon}
+            </p>
+            <p style={{ marginBottom: '10px' }}>
+              <strong>Solicitud del cliente:</strong> {props.requestContent}
+            </p>
+            {props.hasImage && (
+              <a
+                target="_blank"
+                href={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${props.id}?alt=media`}
+              >
+                <img
+                  src={`https://firebasestorage.googleapis.com/v0/b/mas-eu-6aa58.appspot.com/o/quotes%2F${props.id}?alt=media`}
+                  alt=""
+                  style={{ height: '100px' }}
+                />
+              </a>
+            )}
           </div>
           {props.state !== 'Nuevo' ? (
-            <div>
+            <div className={style.info_quote}>
               <p>
                 <strong>Respuesta de cotizacion:</strong> {props.requestAnswer}
               </p>
               <p>
                 <strong>Precio:</strong> {props.quotePrice}
               </p>
-              <Button onPress={(e) => handleSubmit(e, onClose)}>
+              <button
+                className='primary_btn'
+                onClick={(e) => handleSubmit(e, onClose)}
+              >
                 {props.state === 'completado' ? 'Cerrar' : 'Terminar'}
-              </Button>
+              </button>
             </div>
           ) : (
-            <form onSubmit={(e) => handleSubmit(e, onClose)}>
+            <form onSubmit={(e) => handleSubmit(e, onClose)} className={style.form_quote}>
               <div>
                 <label htmlFor="quote">Cotización:</label>
                 <textarea
@@ -120,13 +116,12 @@ const FormAdminQuotes = (props: Props) => {
                   name="quote"
                   value={quote}
                   onChange={handleQuoteChange}
-                  rows={4}
-                  style={{ width: '90%' }}
+                  rows={3}
                   placeholder="Detalle de la cotización..."
                   required
                 />
               </div>
-              <div>
+              <div className={style.content_inputs}>
                 <label htmlFor="price">Precio Cotizado:</label>
                 <input
                   type="text"
@@ -138,7 +133,7 @@ const FormAdminQuotes = (props: Props) => {
                   required
                 />
               </div>
-              <div>
+              <div className={style.content_inputs} >
                 <label htmlFor="price">Número de Orden:</label>
                 <input
                   type="text"
@@ -150,12 +145,16 @@ const FormAdminQuotes = (props: Props) => {
                   required
                 />
               </div>
-              <div>
-                <Button color="danger" type="button" onClick={onClose}>
+              <div className={style.content_buttons}>
+                <button
+                  className={style.btn_cancel}
+                  type="button"
+                  onClick={onClose}
+                >
                   Cancelar
-                </Button>
+                </button>
 
-                <Button type="submit">Enviar</Button>
+                <button className='primary_btn' type="submit">Enviar</button>
               </div>
             </form>
           )}

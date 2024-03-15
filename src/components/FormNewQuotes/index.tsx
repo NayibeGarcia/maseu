@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import Modals from '../Modals'
 import style from './style.module.scss'
-import { Button } from '@nextui-org/react'
 import { UserType, getUserByEmail, saveUser } from '@/services/user'
 import { QuoteType, saveData } from '@/services/crud'
 

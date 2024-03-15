@@ -1,0 +1,75 @@
+.btn_cancel {
+  background-color: #8d8d8d;
+  border-radius: 20px;
+  color: #fff;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.info_quote {
+  p {
+    display: flex;
+  }
+
+  strong {
+    display: flex;
+    width: 210px;
+  }
+
+  a {
+    width: fit-content;
+    display: flex;
+  }
+
+  @media only screen and (max-width: 575px) {
+    p {
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.form_quote {
+  textarea {
+    border: solid #ddd 1px;
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  input {
+    border: solid #3d3d3d 1px;
+    border-radius: 8px;
+    margin: 8px 0 0;
+    width: 310px;
+    padding: 0 5px 0 10px;
+    outline: none;
+    height: 30px;
+  }
+
+  button {
+    width: 154px !important;
+    padding: 10px 20px;
+    height: 40px;
+  }
+}
+
+.content_inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 67%;
+  align-items: center;
+}
+
+@media only screen and (max-width: 575px) {
+  .content_inputs {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .content_buttons {
+    display: flex;
+  }
+}

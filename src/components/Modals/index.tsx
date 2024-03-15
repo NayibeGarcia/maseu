@@ -36,14 +36,15 @@ export default function Modals({
       >
         {buttonText}
       </Button>
+
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent className="max-w-3xl">
+        <ModalContent className="max-w-3xl max-h-[95vh] overflow-scroll">
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 {showBtn && title}
               </ModalHeader>
-              <ModalBody>{children(onClose)}</ModalBody>
+              <ModalBody className='' >{children(onClose)}</ModalBody>
             </>
           )}
         </ModalContent>
