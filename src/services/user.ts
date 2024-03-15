@@ -2,17 +2,17 @@ import { collection, addDoc, query, getDocs, where } from 'firebase/firestore'
 import { db } from '@/firebase'
 
 export interface UserType {
-  id?: string
-  userId?: string
   name: string
-  lastname: string
-  document: number
-  typeDocument: string
-  dataTreatment: boolean
-  conditionsTerms: boolean
   email: string
-  phoneNumber: number
   rol?: string
+  phoneNumber: number
+  userId?: string
+  id?: string
+  lastname?: string
+  document?: number
+  typeDocument?: string
+  dataTreatment?: boolean
+  conditionsTerms?: boolean
   completed?: boolean
   photoUrl?: string
 }
