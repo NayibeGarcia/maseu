@@ -2,6 +2,7 @@ import { useState } from "react"
 import Modals from "../Modals"
 import { toast } from "sonner"
 import style from './style.module.scss'
+import { ServicesType, saveData } from "@/services/servicios"
 
 const FormNewService = () => {
   const [data, setData] = useState({
@@ -9,7 +10,7 @@ const FormNewService = () => {
     description: '',
     top: false,
     active: false
-  })
+  } as ServicesType)
 
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -24,12 +25,10 @@ const FormNewService = () => {
     }
   }
 
-  const uService = {}
-
   const handleSubmit = (e: React.FormEvent | any, callback: () => void) => {
     e.preventDefault()
 
-    // updateServices(props.id as string, uService)
+    saveData( data)
     callback()
     toast("Se actualizo la solicitud")
     setData({
@@ -37,7 +36,7 @@ const FormNewService = () => {
       description: '',
       top: false,
       active: false
-    })
+    } as ServicesType)
   }
 
   const handleClose = (closeModal: () => void) => {
@@ -47,7 +46,7 @@ const FormNewService = () => {
       description: '',
       top: false,
       active: false
-    })
+    } as ServicesType)
   }
 
   return (
