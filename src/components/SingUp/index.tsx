@@ -4,7 +4,6 @@ import { UserAuth } from "@/context/AuthContext";
 import style from "./style.module.scss";
 import { UserType, saveUser } from "@/services/user";
 import { useRouter } from "next/navigation";
-import { select } from "@nextui-org/react";
 
 const InitialValueForm: UserType = {
   name: "",

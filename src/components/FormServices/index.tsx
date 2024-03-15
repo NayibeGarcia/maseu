@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Modals from "../Modals"
-import { ServicesType, updateServices } from "@/services/servicios"
+import { ServicesType, getAllServices, updateServices } from "@/services/servicios"
 import { toast } from "sonner"
 import style from './style.module.scss'
 
@@ -15,8 +15,18 @@ const FormServices = (props: Props) => {
     top: props.top,
     active: props.active
   })
+  const [services, setServices] = useState<ServicesType[]>([])
 
-  const handleQuoteChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  useEffect(() => {
+    const getServices = async () => {
+      const data = await getAllServices()
+      setServices(data)
+    }
+
+    getServices()
+  }, [])
+
+  const handleServiceChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
 
     if (name === 'top') {
@@ -45,14 +55,15 @@ const FormServices = (props: Props) => {
         <form onSubmit={(e) => handleSubmit(e, onClose)} className={style.form_service}>
           <div className={style.content_input}>
             <label htmlFor="quote">Servicio:</label>
-            <input
-              id="title"
-              name="title"
-              value={data.title}
-              onChange={handleQuoteChange}
-              placeholder="Descripcion"
-              required
-            />
+            <select name="servicio" onChange={handleServiceChange}>
+              {services.map(({ title }) => (
+                <option
+                  selected={title === data.title}
+                  key={title}
+                  value={title}
+                >{title}</option>
+              ))}
+            </select>
           </div>
 
           <div>
@@ -62,7 +73,7 @@ const FormServices = (props: Props) => {
               name="description"
               value={data.description}
               rows={2}
-              onChange={handleQuoteChange}
+              onChange={handleServiceChange}
               placeholder="Descripcion"
               required
             />
@@ -75,7 +86,7 @@ const FormServices = (props: Props) => {
                 id="top"
                 name="top"
                 type="checkbox"
-                onChange={handleQuoteChange}
+                onChange={handleServiceChange}
                 checked={data.top}
               />
             </div>
@@ -86,7 +97,7 @@ const FormServices = (props: Props) => {
                 id="active"
                 name="active"
                 type="checkbox"
-                onChange={handleQuoteChange}
+                onChange={handleServiceChange}
                 checked={data.active}
               />
             </div>
