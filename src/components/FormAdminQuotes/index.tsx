@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Modals from '../Modals'
 import { QuoteFireType, updateDocument } from '@/services/crud'
 import { toast } from 'sonner'
-import { Button } from '@nextui-org/react'
 import style from './style.module.scss'
 
 interface Props extends QuoteFireType {

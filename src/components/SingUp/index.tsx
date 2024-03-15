@@ -27,7 +27,6 @@ const SingUp = () => {
   const [aceptoTerminos, setAceptoTerminos] = useState(false);
   const [dataTreatment, setdataTreatment] = useState(false);
   const router = useRouter();
-  console.log(user);
 
   if (user?.completed) {
     router.push("/");

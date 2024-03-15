@@ -70,8 +70,6 @@ const FormNewQuotes = () => {
   ) => {
     const { name, value } = event.target
 
-    console.log('select', name, value)
-
     setValue({
       ...values,
       [name]: value,
