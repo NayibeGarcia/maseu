@@ -24,8 +24,11 @@ export default function Page() {
 
   return (
     <section className={style.services}>
-      <h1 className={style.services_title}>Nuestros Servicios</h1>
 
+      <div className={style.content_title}>
+        <h1 className={style.services_title}>Nuestros Servicios</h1>
+        <button className='primary_btn' type="button">Nuevo Servicio</button>
+      </div>
 
 
       <div className={style.content_services}>
